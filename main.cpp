@@ -12,6 +12,16 @@ using namespace std;
 
 class Color {
 public:
+	// Default constructor (delegates to parameterized constructor)
+	Color() : Color(0, 0, 0) {}
+
+	// Partial constructors (delegate to parameterized constructor)
+	Color(int r) : Color(r, 0, 0) {}
+	Color(int r, int g) : Color(r, g, 0) {}
+
+	// Parameterized constructor (take parameters and initialize attributes through initializer list)
+	Color(int r, int g, int b) : red(r), green(g), blue(b) {}
+
 	void setRed(int val)	{ red = val; }
 	void setGreen(int val)	{ green = val; }
 	void setBlue(int val)	{ blue = val; }
@@ -33,19 +43,13 @@ private:
 void setColor(Color& color, int r, int b, int g);
 
 int main() {
-	Color coral;
-	Color turquoise;
-	Color maroon;
-	Color indigo;
-	Color magenta;
+	Color coral(249, 162, 178);
+	Color turquoise(162, 246, 249);
+	Color maroon(125, 46, 58);
+	Color indigo(54, 59, 152);
+	Color magenta(213, 60, 162);
 	const int PRINT_WIDTH = 12; // Used for neat output
 
-	// Set RGB values for each color
-	setColor(coral, 249, 162, 178);
-	setColor(turquoise, 162, 246, 249);
-	setColor(maroon, 125, 46, 58);
-	setColor(indigo, 54, 59, 152);
-	setColor(magenta, 213, 60, 162);
 
 	// Output each color
 	cout << left << setw(PRINT_WIDTH) << "Coral";
