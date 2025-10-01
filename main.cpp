@@ -19,7 +19,7 @@ public:
 	Color(int r) : Color(r, 0, 0) {}
 	Color(int r, int g) : Color(r, g, 0) {}
 
-	// Parameterized constructor (take parameters and initialize attributes through initializer list)
+	// Parameterized constructor (takes parameters and initializes data members through initializer list)
 	Color(int r, int g, int b) : red(r), green(g), blue(b) {}
 
 	void setRed(int val)	{ red = val; }
@@ -43,6 +43,14 @@ private:
 void setColor(Color& color, int r, int b, int g);
 
 int main() {
+	// Call default constructor
+	Color black; // RGB = 0, 0, 0
+
+	// Call partial constructors
+	Color green(129); // RGB = 129, 0, 0
+	Color russet(179, 80);	// RGB = 179, 80, 0
+
+	// Call parameterized constructor
 	Color coral(249, 162, 178);
 	Color turquoise(162, 246, 249);
 	Color maroon(125, 46, 58);
@@ -52,7 +60,13 @@ int main() {
 
 
 	// Output each color
-	cout << left << setw(PRINT_WIDTH) << "Coral";
+	cout << left << setw(PRINT_WIDTH) << "Black";
+	black.print();
+	cout << setw(PRINT_WIDTH) << "Green";
+	green.print();
+	cout << setw(PRINT_WIDTH) << "Russet";
+	russet.print();
+	cout << setw(PRINT_WIDTH) << "Coral";
 	coral.print();
 	cout << setw(PRINT_WIDTH) << "Turquoise";
 	turquoise.print();
