@@ -1,10 +1,6 @@
 // COMSC-210 | Lab 16 | Mika Aquino
 // IDE used: Visual Studio 2022
 
-/* INSTRUCTIONS:
-Modify your Lab 14, Color class, such that it leverages constructors. Create a default constructor, a parameter constructor, and at least one partial constructor.
-In main(), instantiate a variety of Color objects using a variety of types of constructors.*/
-
 #include <iostream>
 #include <iomanip>
 
@@ -19,7 +15,7 @@ public:
 	Color(int r) : Color(r, 0, 0) {}
 	Color(int r, int g) : Color(r, g, 0) {}
 
-	// Parameterized constructor (takes parameters and initializes data members through initializer list)
+	// Parameterized constructor (takes parameters to initialize each data member through initializer list)
 	Color(int r, int g, int b) : red(r), green(g), blue(b) {}
 
 	void setRed(int val)	{ red = val; }
@@ -37,11 +33,6 @@ private:
 	int blue;
 };
 
-// setColor() sets a Color object's red, blue, and green values.
-// args: a reference to a Color object and three ints for red, blue, green
-// returns: void
-void setColor(Color& color, int r, int b, int g);
-
 int main() {
 	// Call default constructor
 	Color black; // RGB = 0, 0, 0
@@ -56,8 +47,8 @@ int main() {
 	Color maroon(125, 46, 58);
 	Color indigo(54, 59, 152);
 	Color magenta(213, 60, 162);
-	const int PRINT_WIDTH = 12; // Used for neat output
 
+	const int PRINT_WIDTH = 12; // Used for neat output
 
 	// Output each color
 	cout << left << setw(PRINT_WIDTH) << "Black";
@@ -78,10 +69,4 @@ int main() {
 	magenta.print();
 
 	return 0;
-}
-
-void setColor(Color& color, int r, int b, int g) {
-	color.setRed(r);
-	color.setGreen(b);
-	color.setBlue(g);
 }
