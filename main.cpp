@@ -38,7 +38,7 @@ int main() {
 	Color black; // RGB = 0, 0, 0
 
 	// Call partial constructors
-	Color green(129); // RGB = 129, 0, 0
+	Color red(129); // RGB = 129, 0, 0
 	Color russet(179, 80);	// RGB = 179, 80, 0
 
 	// Call parameterized constructor
@@ -53,8 +53,8 @@ int main() {
 	// Output each color
 	cout << left << setw(PRINT_WIDTH) << "Black";
 	black.print();
-	cout << setw(PRINT_WIDTH) << "Green";
-	green.print();
+	cout << setw(PRINT_WIDTH) << "Red";
+	red.print();
 	cout << setw(PRINT_WIDTH) << "Russet";
 	russet.print();
 	cout << setw(PRINT_WIDTH) << "Coral";
